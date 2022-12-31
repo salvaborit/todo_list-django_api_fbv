@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'todo_list',
-    'todo_api',
+    'base',
+    'api',
 ]
 
 MIDDLEWARE = [
