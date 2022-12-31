@@ -3,7 +3,8 @@ from django.db import models
 
 class Tasks(models.Model):
     """ model for main tasks table in db """
-    name = models.CharField(max_length=500)
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
