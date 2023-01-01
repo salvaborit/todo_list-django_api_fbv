@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from base.models import Task, Label
+from base.models import Task, Tag
 
 
 admin.site.register(Task)
-admin.site.register(Label)
+admin.site.register(Tag)

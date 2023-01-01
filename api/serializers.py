@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from base.models import Task, Label
+from base.models import Task, Tag
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class LabelSerializer(serializers.ModelSerializer):
+class TagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Label
+        model = Tag
         fields = '__all__'
