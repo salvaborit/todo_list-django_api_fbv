@@ -14,8 +14,20 @@ class Tag(models.Model):
 
 class Task(models.Model):
     """ model for main tasks table in db """
+    URGENCY_0 = '0'  # default
+    URGENCY_1 = '1'
+    URGENCY_2 = '2'
+
+    URGENCY_CHOICES = [
+        (URGENCY_0, 'Normal'),
+        (URGENCY_1, 'Important'),
+        (URGENCY_2, 'Very important'),
+    ]
+
     title = models.CharField(max_length=255, blank=False)
     description = models.CharField(max_length=255, blank=True)
+    urgency = models.CharField(
+        max_length=1, choices=URGENCY_CHOICES, default=URGENCY_0)
     tags = models.ManyToManyField(Tag, related_name='tasks')
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
