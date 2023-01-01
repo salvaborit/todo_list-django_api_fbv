@@ -1,5 +1,10 @@
 # To-do list in Django
 
+## Usage
+
+api/tasks/3 for data in http client <br>
+api/labels.json for data in json format
+
 ## Endpoints
 
 ### Tasks
@@ -10,9 +15,4 @@ api/tasks/3 for task with id 3
 ### Labels
 
 api/labels/ for all labels <br>
-api/labels/3 for label with id 2
-
-## Usage
-
-api/labels/3.json for data in json format <br>
-api/tasks.xml for data in xml format
+api/labels/7 for label with id 7
