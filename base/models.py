@@ -37,4 +37,7 @@ class Task(models.Model):
         return f'<Task title: {self.title}, created at: {self.created_at}>'
 
     class Meta:
+        indexes = [
+            models.Index(fields=['title', 'description'])
+        ]
         ordering = ['updated_at']
