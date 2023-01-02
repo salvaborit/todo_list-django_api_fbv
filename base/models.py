@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Tag(models.Model):
-    """ class for task labels table in db """
+    """ class for task tags table in db """
     name = models.CharField(max_length=5255)
 
     def __str__(self):
@@ -28,7 +28,7 @@ class Task(models.Model):
     description = models.CharField(max_length=255, blank=True)
     urgency = models.CharField(
         max_length=1, choices=URGENCY_CHOICES, default=URGENCY_0)
-    tags = models.ManyToManyField(Tag, related_name='tasks')
+    tags = models.ManyToManyField(Tag)
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

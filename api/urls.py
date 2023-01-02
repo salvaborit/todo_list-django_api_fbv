@@ -10,6 +10,7 @@ urlpatterns = [
     path('tasks/<int:id>', views.get_task_by_id),
     path('tags/', views.get_tags),
     path('tags/<int:id>/', views.get_tags_by_id),
+    path('tags/<int:id>/tasks/', views.get_tasks_by_tag),
 ]
 
 # adding .json to end of api slug formats the data to json

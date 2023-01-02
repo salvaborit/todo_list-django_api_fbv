@@ -94,3 +94,21 @@ def get_tags_by_id(request, id, format=None):
     elif request.method == 'DELETE':
         tag.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def get_tasks_by_tag(request, id, format=None):
+    """ route 'tags/<int:id>/tasks/' """
+    try:
+        tag = Tag.objects.get(pk=id)
+    except Tag.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        tasks = Task.objects.filter(tags=tag)
+        serializer = TaskSerializer(tasks, many=True)
+        # intermediate model of m:m relationship of tasks/tags
+        # inter_model = Task.tags.through
+        # tasks = inter_model.objects.filter(tag=tag)
+        # serialize tasks (object type: type of intermediary table)
+        return Response({'tasks': serializer.data})
