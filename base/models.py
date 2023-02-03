@@ -24,7 +24,7 @@ class Task(models.Model):
         (URGENCY_2, 'Very important'),
     ]
 
-    title = models.CharField(max_length=255, blank=False)
+    title = models.CharField(max_length=255)
     description = models.CharField(max_length=255, blank=True)
     urgency = models.CharField(
         max_length=1, choices=URGENCY_CHOICES, default=URGENCY_0)

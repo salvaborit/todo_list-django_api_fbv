@@ -5,14 +5,16 @@
 api/tasks/3 for data in http client <br>
 api/tags.json for data in json format
 
-## Endpoints and methods
+## Endpoints
 
 ### GET
 
+api/status/ for API status (running or not)
 api/tasks/ for all tasks <br>
-api/tasks/3 for task instance <br>
+api/tasks/3 for task with id 3 <br>
 api/tags/ for all tags <br>
-api/tags/7 for tag instance
+api/tags/7 for tag with id 7 <br>
+api/tags/3/tasks/ to get all tasks with tag id 3
 
 ### POST
 
@@ -28,3 +30,7 @@ api/tags/3 to modify tag with json data
 
 api/tasks/3 to delete task instance <br>
 api/tags/3 to delete task instance
+
+# Misc
+
+- Used function based views
